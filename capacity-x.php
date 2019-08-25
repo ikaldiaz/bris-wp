@@ -16,11 +16,11 @@
 		// }
 	    ?>
 
-	    <option value="1">Sangat Buruk</option>
-	    <option value="2">Buruk</option>
-	    <option value="3">Sedang</option>
-	    <option value="4">Baik</option>
-	    <option value="5">sangat baik</option>
+	    <option value="1">1000000</option>
+	    <option value="2">2000000</option>
+	    <option value="3">3000000</option>
+	    <option value="4">4000000</option>
+	    <option value="5">5000000</option>
     </select>
 <!-- </div> -->
 
