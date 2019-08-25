@@ -52,13 +52,13 @@ if($_POST){
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		  </button>
-		  <a class="navbar-brand" href="http://www.codeberkas.xyz">WP (Weighted Product)</a>
+		  <a class="navbar-brand" href="http://www.codeberkas.xyz">SPK Pengajuan Kredit dengan Metode WP (Weighted Product)</a>
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		  <ul class="nav navbar-nav navbar-right">
-			<li><a href="http://www.codeberkas.xyz">Code Berkas</a></li>
+			<li><a href="https://www.unisnu.ac.id">UNISNU</a></li>
 		  </ul>
 		</div><!-- /.navbar-collapse -->
 	  </div><!-- /.container-fluid -->
@@ -80,7 +80,7 @@ if($_POST){
 				    <label for="InputPassword1">Password</label>
 				    <input type="password" class="form-control" name="password" id="InputPassword1" placeholder="Password">
 				  </div>
-				  <p><small style="color:#999;">Username: admin dan Password: admin</small></p>
+				  <!-- <p><small style="color:#999;">Username: admin dan Password: admin</small></p> -->
 				  <button type="submit" class="btn btn-primary">Login</button>
 				</form>
 		  	</div></div>
