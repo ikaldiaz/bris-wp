@@ -8,6 +8,7 @@
     <script src="js/jquery.dataTables.min.js"></script>
     <script src="js/dataTables.bootstrap.min.js"></script>
     <script type="text/javascript" src="js/jquery.toastmessage.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
     <script>
     $(document).ready(function() {
 
