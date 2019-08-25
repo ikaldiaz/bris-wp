@@ -46,10 +46,11 @@ $db = $config->getConnection();
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		  <ul class="nav navbar-nav">
 			<li><a href="index.php">Home</a></li>
-			<li><a href="nilai.php">Nilai</a></li>
-			<li><a href="kriteria.php">Kriteria</a></li>
-			<li><a href="bobot.php">Bobot</a></li>
-			<li><a href="alternatif.php">Alternatif</a></li>
+			<li><a href="nasabah.php">Nasabah</a></li>
+			<!-- <li><a href="nilai.php">Nilai</a></li> -->
+			<!-- <li><a href="kriteria.php">Kriteria</a></li> -->
+			<!-- <li><a href="bobot.php">Bobot</a></li> -->
+			<li><a href="alternatif.php">Aplikasi Pengajuan</a></li>
 			<li><a href="rangking.php">Rangking</a></li>
 			<li class="active"><a href="laporan.php">Laporan</a></li>
 		  </ul>

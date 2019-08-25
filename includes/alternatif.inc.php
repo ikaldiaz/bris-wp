@@ -31,7 +31,7 @@ class Alternatif{
 	
 	function readAll(){
 
-		$query = "SELECT a.*, n.nama FROM ".$this->table_name." AS a INNER JOIN wp_nasabah AS n ON a.id_nasabah=n.id_nasabah ORDER BY a.id_alternatif ASC";
+		$query = "SELECT a.*, n.nama, m.nama AS nama_mikro FROM ".$this->table_name." AS a INNER JOIN wp_nasabah AS n ON a.id_nasabah=n.id_nasabah INNER JOIN wp_mikro AS m ON a.id_mikro=m.id_mikro ORDER BY a.id_alternatif ASC";
 		$stmt = $this->conn->prepare( $query );
 		$stmt->execute();
 		

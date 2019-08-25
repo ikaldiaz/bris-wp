@@ -43,7 +43,7 @@ if(isset($_POST['hapus-contengan'])){
 			<h4>Data Aplikasi Pengajuan</h4>
 		</div>
 		<div class="col-md-6 text-right">
-            <button type="submit" name="hapus-contengan" class="btn btn-danger">Hapus Contengan</button>
+            <!-- <button type="submit" name="hapus-contengan" class="btn btn-danger">Hapus Contengan</button> -->
 			<button type="button" onclick="location.href='alternatif-baru.php'" class="btn btn-primary">Tambah Data</button>
 		</div>
 	</div>
@@ -55,6 +55,7 @@ if(isset($_POST['hapus-contengan'])){
                 <th width="10px"><input type="checkbox" name="select-all" id="select-all" /></th>
                 <th>Aplikasi</th>
                 <th>Nama Nasabah</th>
+                <th>Jenis Pengajuan</th>
                 <th>Tanggal Pengajuan</th>
                 <th>Vektor S</th>
                 <th>Vektor V</th>
@@ -67,6 +68,7 @@ if(isset($_POST['hapus-contengan'])){
                 <th><input type="checkbox" name="select-all2" id="select-all2" /></th>
                 <th>Aplikasi</th>
                 <th>Nama Nasabah</th>
+                <th>Jenis Pengajuan</th>
                 <th>Tanggal Pengajuan</th>
                 <th>Vektor S</th>
                 <th>Vektor V</th>
@@ -83,6 +85,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
                 <td style="vertical-align:middle;"><input type="checkbox" value="<?php echo $row['id_alternatif'] ?>" name="checkbox[]" /></td>
                 <td style="vertical-align:middle;"><?php echo $row['nama_alternatif'] ?></td>
                 <td style="vertical-align:middle;"><?php echo $row['nama'] ?></td>
+                <td style="vertical-align:middle;"><?php echo $row['nama_mikro'] ?></td>
                 <td style="vertical-align:middle;"><?php echo $row['tgl'] ?></td>
                 <td style="vertical-align:middle;"><?php echo $row['vektor_s'] ?></td>
                 <td style="vertical-align:middle;"><?php echo $row['vektor_v'] ?></td>
