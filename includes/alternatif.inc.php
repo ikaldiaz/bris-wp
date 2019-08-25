@@ -7,6 +7,7 @@ class Alternatif{
 	public $id;
 	public $kt;
 	public $ns;
+	public $jpk;
 	public $tgl;
 	
 	public function __construct($db){
@@ -15,11 +16,12 @@ class Alternatif{
 	
 	function insert(){ 
 		
-		$query = "insert into ".$this->table_name." values('',?,'','',?, ?)";
+		$query = "insert into ".$this->table_name." values('',?,'','',?, ?, ?)";
 		$stmt = $this->conn->prepare($query);
 		$stmt->bindParam(1, $this->kt);
 		$stmt->bindParam(2, $this->ns);
-		$stmt->bindParam(3, $this->tgl);
+		$stmt->bindParam(3, $this->jpk);
+		$stmt->bindParam(4, $this->tgl);
 		
 		if($stmt->execute()){
 			return true;
@@ -67,6 +69,7 @@ class Alternatif{
 		$this->id = $row['id_alternatif'];
 		$this->kt = $row['nama_alternatif'];
 		$this->ns = $row['id_nasabah'];
+		$this->jpk = $row['id_mikro'];
 		$this->tgl = $row['tgl'];
 	}
 	
@@ -78,6 +81,7 @@ class Alternatif{
 				SET 
 					nama_alternatif = :kt
 					id_nasabah = :ns
+					id_mikro = :jpk
 					tgl = :tgl
 				WHERE
 					id_alternatif = :id";
@@ -86,6 +90,7 @@ class Alternatif{
 
 		$stmt->bindParam(':kt', $this->kt);
 		$stmt->bindParam(':ns', $this->ns);
+		$stmt->bindParam(':jpk', $this->jpk);
 		$stmt->bindParam(':tgl', $this->tgl);
 		$stmt->bindParam(':id', $this->id);
 		
