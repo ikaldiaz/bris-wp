@@ -14,7 +14,7 @@ class Mikro{
 	
 	function insert(){ 
 		
-		$query = "insert into ".$this->table_name." values('',?,'','',?, ?)";
+		$query = "INSERT INTO ".$this->table_name." values('',?, ?)";
 		$stmt = $this->conn->prepare($query);
 		$stmt->bindParam(1, $this->nm);
 		$stmt->bindParam(2, $this->kt);
@@ -30,7 +30,7 @@ class Mikro{
 	
 	function readAll(){
 
-		$query = "SELECT a.*, n.nama FROM ".$this->table_name." ORDER BY id ASC";
+		$query = "SELECT * FROM ".$this->table_name." ORDER BY id_mikro ASC";
 		$stmt = $this->conn->prepare( $query );
 		$stmt->execute();
 		
@@ -39,7 +39,7 @@ class Mikro{
 
 	function countAll(){
 
-		$query = "SELECT * FROM ".$this->table_name." ORDER BY id ASC";
+		$query = "SELECT * FROM ".$this->table_name." ORDER BY id_mikro ASC";
 		$stmt = $this->conn->prepare( $query );
 		$stmt->execute();
 		
@@ -48,7 +48,7 @@ class Mikro{
 	
 	function readOne(){
 		
-		$query = "SELECT * FROM " . $this->table_name . " WHERE id=? LIMIT 0,1";
+		$query = "SELECT * FROM " . $this->table_name . " WHERE id_mikro=? LIMIT 0,1";
 
 		$stmt = $this->conn->prepare( $query );
 		$stmt->bindParam(1, $this->id);
@@ -56,9 +56,9 @@ class Mikro{
 
 		$row = $stmt->fetch(PDO::FETCH_ASSOC);
 		
-		$this->id = $row['id_alternatif'];
-		$this->nm = $row['nama_alternatif'];
-		$this->kt = $row['id_nasabah'];
+		$this->id = $row['id_mikro'];
+		$this->nm = $row['nama'];
+		$this->kt = $row['keterangan'];
 	}
 	
 	// update the product
@@ -67,10 +67,10 @@ class Mikro{
 		$query = "UPDATE 
 					" . $this->table_name . " 
 				SET 
-					nama_alternatif = :nm
-					id_nasabah = :kt
+					nama = :nm
+					keterangan = :kt
 				WHERE
-					id_alternatif = :id";
+					id_mikro = :id";
 
 		$stmt = $this->conn->prepare($query);
 
@@ -89,7 +89,7 @@ class Mikro{
 	// delete the product
 	function delete(){
 	
-		$query = "DELETE FROM " . $this->table_name . " WHERE id_alternatif = ?";
+		$query = "DELETE FROM " . $this->table_name . " WHERE id_mikro = ?";
 		
 		$stmt = $this->conn->prepare($query);
 		$stmt->bindParam(1, $this->id);
@@ -102,7 +102,7 @@ class Mikro{
 	}
 	function hapusell($ax){
 	
-		$query = "DELETE FROM " . $this->table_name . " WHERE id_alternatif in $ax";
+		$query = "DELETE FROM " . $this->table_name . " WHERE id_mikro in $ax";
 		
 		$stmt = $this->conn->prepare($query);
 
