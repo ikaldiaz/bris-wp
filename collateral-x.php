@@ -6,8 +6,8 @@
  ?>
 
 <!-- <div class="form-group"> -->
-    <label for="ikx">Agunan (C2)</label>
-    <select class="form-control" id="ikx" name="ikx">
+    <label for="nnx">Agunan (C2)</label>
+    <select class="form-control" id="nnx" name="nnx">
     	<?php
 		// $stmt2 = $pgn2->readAll();
 		// while ($row2 = $stmt2->fetch(PDO::FETCH_ASSOC)){

@@ -49,7 +49,7 @@ window.onload=function(){
 		$pgn1->readOne();
 		// echo $pgn1->kt;
 		if(empty($pgn1->ns)){
-			echo "<script>alert('No Data');location.href='alternatif.php'</script>";
+			echo "<script>alert('No Data Nasabah');location.href='alternatif.php'</script>";
 
 			// echo "<script>alert('".empty($pgn1->ns)."');</script>";
 		}
@@ -92,8 +92,18 @@ window.onload=function(){
 						echo "<input type='text' disabled class='form-control' value='$nas->nm'>";
 						echo "<input type='text' disabled class='form-control' value='$nas->ph'>";
 						echo "<input type='text' disabled class='form-control' value='$nas->ad'>";
+						echo "<input type='text' disabled class='form-control' value='$nas->ad'>";
 						echo "<input type='text' class='form-control' name='ia' value='$pgn1->id'>";
-						echo "<input type='text' class='form-control' id='ia' value='$pgn1->kt'>";
+						// echo "<input type='text' class='form-control' id='ia' value='$pgn1->kt'>";
+					    ?>
+				    <!-- <input type="text" class="form-control" id="ia" name="ia" required> -->
+				  </div>
+
+				  <div class="form-group">
+				    <label for="ia">Jenis Pengajuan</label>
+				    	<?php
+						echo "<input type='text' disabled class='form-control' value='$pgn1->kt'>";
+						// echo "<input type='text' class='form-control' id='ia' value='$pgn1->kt'>";
 					    ?>
 				    <!-- <input type="text" class="form-control" id="ia" name="ia" required> -->
 				  </div>
@@ -134,7 +144,7 @@ window.onload=function(){
 
 				  -->
 				  
-				  <input type="text" class="form-control" id="nn" name="nn" placeholder="nn" /> 
+				  <input type="text" class="form-control" id="nn" name="nn" placeholder="nilai" /> 
 
 				  <button type="submit" class="btn btn-primary">Simpan</button>
 				</form>

@@ -87,9 +87,9 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
                 <td style="vertical-align:middle;"><?php echo $row['vektor_s'] ?></td>
                 <td style="vertical-align:middle;"><?php echo $row['vektor_v'] ?></td>
                 <td class="text-center" style="vertical-align:middle;">
-					<a href="alternatif-ubah.php?id=<?php echo $row['id_alternatif'] ?>" class="btn btn-warning"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                    <a href="detail-baru.php?id=<?php echo $row['id_alternatif'] ?>" class="btn btn-info"><span class="glyphicon glyphicon-book" aria-hidden="true"></span></a>
-					<a href="alternatif-hapus.php?id=<?php echo $row['id_alternatif'] ?>" onclick="return confirm('Yakin ingin menghapus data')" class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+					<a href="alternatif-ubah.php?id_a=<?php echo $row['id_alternatif'] ?>" class="btn btn-warning"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                    <a href="detail-baru.php?id_a=<?php echo $row['id_alternatif'] ?>" class="btn btn-info"><span class="glyphicon glyphicon-book" aria-hidden="true"></span></a>
+					<a href="alternatif-hapus.php?id_a=<?php echo $row['id_alternatif'] ?>" onclick="return confirm('Yakin ingin menghapus data')" class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
 			    </td>
             </tr>
 <?php
