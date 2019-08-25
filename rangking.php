@@ -31,6 +31,13 @@ $count = $pro->countAll();
 				</div>
 				<div class="col-md-6 text-right">
 		            <button type="button" onclick="location.href='rangking-baru.php'" class="btn btn-primary">Tambah Data</button>
+		            <?php 
+		            if($count>0){
+		            ?>
+		            <button type="button" onclick="location.href='laporan.php'" class="btn btn-primary">Laporan</button>
+		            <?php
+		            }
+		            ?>
 				</div>
 			</div>
 			<br/>

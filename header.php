@@ -53,7 +53,7 @@ $db = $config->getConnection();
 			<li><a href="nasabah.php">Nasabah</a></li>
 			<li><a href="alternatif.php">Aplikasi Pengajuan</a></li>
 			<li><a href="rangking.php">Rangking</a></li>
-			<li><a href="laporan.php">Laporan</a></li>
+			<!-- <li><a href="laporan.php">Laporan</a></li> -->
 		  </ul>
 		  <ul class="nav navbar-nav navbar-right">
 			<li><a href="profil.php"><?php echo $_SESSION['nama_lengkap'] ?></a></li>

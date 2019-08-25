@@ -52,7 +52,7 @@ $db = $config->getConnection();
 			<!-- <li><a href="bobot.php">Bobot</a></li> -->
 			<li><a href="alternatif.php">Aplikasi Pengajuan</a></li>
 			<li><a href="rangking.php">Rangking</a></li>
-			<li class="active"><a href="laporan.php">Laporan</a></li>
+			<!-- <li class="active"><a href="laporan.php">Laporan</a></li> -->
 		  </ul>
 		  <ul class="nav navbar-nav navbar-right">
 			<li><a href="profil.php"><?php echo $_SESSION['nama_lengkap'] ?></a></li>
