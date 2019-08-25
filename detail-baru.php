@@ -79,6 +79,7 @@ window.onload=function(){
 		  			</h3>
 		  		</div>
 		  	</div>
+
 			
 			    <form method="post">
 				  <div class="form-group">
@@ -90,13 +91,29 @@ window.onload=function(){
 						$nas->id = $pgn1->ns;
 						$nas->readOne();
 						echo "<input type='text' disabled class='form-control' value='$nas->nm'>";
+						// echo "<input type='text' disabled class='form-control' value='$nas->id'>";
+						// echo "<input type='text' disabled class='form-control' value='$nas->ph'>";
+						// echo "<input type='text' disabled class='form-control' value='$nas->ad'>";
+						echo "<input type='hidden' class='form-control' name='ia' value='$pgn1->id'>";
+						// echo "<input type='text' class='form-control' id='ia' value='$pgn1->kt'>";
+					    ?>
+				    <!-- <input type="text" class="form-control" id="ia" name="ia" required> -->
+				  </div>
+				  	<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#cdetail" aria-expanded="false" aria-controls="cdetail">
+					  Detail Nasabah
+					</button>
+				  <div class="form-group collapse" id="cdetail">
+					<!-- <div class="collapse" id="cdetail"> -->
+					  <!-- <div class="well"> -->
+						<?php
+						echo "<input type='text' disabled class='form-control' value='$nas->id'>";
 						echo "<input type='text' disabled class='form-control' value='$nas->ph'>";
-						echo "<input type='text' disabled class='form-control' value='$nas->ad'>";
 						echo "<input type='text' disabled class='form-control' value='$nas->ad'>";
 						echo "<input type='text' class='form-control' name='ia' value='$pgn1->id'>";
 						// echo "<input type='text' class='form-control' id='ia' value='$pgn1->kt'>";
 					    ?>
-				    <!-- <input type="text" class="form-control" id="ia" name="ia" required> -->
+					  <!-- </div> -->
+					<!-- </div> -->
 				  </div>
 
 				  <div class="form-group">

@@ -7,7 +7,7 @@ if($_POST){
 	include_once 'includes/alternatif.inc.php';
 	$eks = new Alternatif($db);
 
-	$eks->kt = $_POST['kt'].'-'.$_POST['jpk'];
+	$eks->kt = $_POST['ns'].'-'.$_POST['jpk'].'-'.$_POST['tgl'];
 	$eks->ns = $_POST['ns'];
 	$eks->tgl = $_POST['tgl'];
 	
@@ -26,7 +26,7 @@ window.onload=function(){
 <script type="text/javascript">
 window.onload=function(){
 	showStickyErrorToast();
-};
+}; 
 </script>
 <?php
 	}
