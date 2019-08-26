@@ -20,6 +20,8 @@ $db = $config->getConnection();
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/dataTables.bootstrap.min.css" rel="stylesheet">
     <link type="text/css" href="css/jquery.toastmessage.css" rel="stylesheet"/>
+    <link type="text/css" href="lib/datepicker/dist/datepicker.min.css" rel="stylesheet"/>
+
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->

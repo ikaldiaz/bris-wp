@@ -1,12 +1,14 @@
 <?php
-class Mikro{
+class Pengajuan{
 	
 	private $conn;
-	private $table_name = "wp_mikro";
+	private $table_name = "wp_pengajuan";
 	
 	public $id;
 	public $nm;
-	public $kt;
+	public $li;
+	public $te;
+
 	
 	public function __construct($db){
 		$this->conn = $db;
@@ -14,11 +16,11 @@ class Mikro{
 	
 	function insert(){ 
 		
-		$query = "INSERT INTO ".$this->table_name." values('',?, ?)";
+		$query = "INSERT INTO ".$this->table_name." values('',?, ?, ?)";
 		$stmt = $this->conn->prepare($query);
 		$stmt->bindParam(1, $this->nm);
-		$stmt->bindParam(2, $this->kt);
-		// $stmt->bindParam(3, $this->tgl);
+		$stmt->bindParam(2, $this->li);
+		$stmt->bindParam(3, $this->te);
 		
 		if($stmt->execute()){
 			return true;
@@ -30,7 +32,7 @@ class Mikro{
 	
 	function readAll(){
 
-		$query = "SELECT * FROM ".$this->table_name." ORDER BY id_mikro ASC";
+		$query = "SELECT * FROM ".$this->table_name." ORDER BY id_pengajuan ASC";
 		$stmt = $this->conn->prepare( $query );
 		$stmt->execute();
 		
@@ -39,7 +41,7 @@ class Mikro{
 
 	function countAll(){
 
-		$query = "SELECT * FROM ".$this->table_name." ORDER BY id_mikro ASC";
+		$query = "SELECT * FROM ".$this->table_name." ORDER BY id_pengajuan ASC";
 		$stmt = $this->conn->prepare( $query );
 		$stmt->execute();
 		
@@ -48,7 +50,7 @@ class Mikro{
 	
 	function readOne(){
 		
-		$query = "SELECT * FROM " . $this->table_name . " WHERE id_mikro=? LIMIT 0,1";
+		$query = "SELECT * FROM " . $this->table_name . " WHERE id_pengajuan=? LIMIT 0,1";
 
 		$stmt = $this->conn->prepare( $query );
 		$stmt->bindParam(1, $this->id);
@@ -56,9 +58,10 @@ class Mikro{
 
 		$row = $stmt->fetch(PDO::FETCH_ASSOC);
 		
-		$this->id = $row['id_mikro'];
+		$this->id = $row['id_pengajuan'];
 		$this->nm = $row['nama'];
-		$this->kt = $row['keterangan'];
+		$this->li = $row['limit_p'];
+		$this->te = $row['tenor'];
 	}
 	
 	// update the product
@@ -68,14 +71,16 @@ class Mikro{
 					" . $this->table_name . " 
 				SET 
 					nama = :nm
-					keterangan = :kt
+					limit_p = :li
+					tenor = :te
 				WHERE
-					id_mikro = :id";
+					id_pengajuan = :id";
 
 		$stmt = $this->conn->prepare($query);
 
 		$stmt->bindParam(':nm', $this->nm);
-		$stmt->bindParam(':kt', $this->kt);
+		$stmt->bindParam(':li', $this->li);
+		$stmt->bindParam(':te', $this->te);
 		$stmt->bindParam(':id', $this->id);
 		
 		// execute the query
@@ -89,7 +94,7 @@ class Mikro{
 	// delete the product
 	function delete(){
 	
-		$query = "DELETE FROM " . $this->table_name . " WHERE id_mikro = ?";
+		$query = "DELETE FROM " . $this->table_name . " WHERE id_pengajuan = ?";
 		
 		$stmt = $this->conn->prepare($query);
 		$stmt->bindParam(1, $this->id);
@@ -102,7 +107,7 @@ class Mikro{
 	}
 	function hapusell($ax){
 	
-		$query = "DELETE FROM " . $this->table_name . " WHERE id_mikro in $ax";
+		$query = "DELETE FROM " . $this->table_name . " WHERE id_pengajuan in $ax";
 		
 		$stmt = $this->conn->prepare($query);
 

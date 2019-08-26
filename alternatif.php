@@ -85,7 +85,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
                 <td style="vertical-align:middle;"><input type="checkbox" value="<?php echo $row['id_alternatif'] ?>" name="checkbox[]" /></td>
                 <td style="vertical-align:middle;"><?php echo $row['nama_alternatif'] ?></td>
                 <td style="vertical-align:middle;"><?php echo $row['nama'] ?></td>
-                <td style="vertical-align:middle;"><?php echo $row['nama_mikro'] ?></td>
+                <td style="vertical-align:middle;"><?php echo $row['nama_pengajuan'] ?></td>
                 <td style="vertical-align:middle;"><?php echo $row['tgl'] ?></td>
                 <td style="vertical-align:middle;"><?php echo $row['vektor_s'] ?></td>
                 <td style="vertical-align:middle;"><?php echo $row['vektor_v'] ?></td>

@@ -7,8 +7,9 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.dataTables.min.js"></script>
     <script src="js/dataTables.bootstrap.min.js"></script>
+    <script src="lib/datepicker/dist/datepicker.min.js"></script>
     <script type="text/javascript" src="js/jquery.toastmessage.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script> -->
     <script>
     $(document).ready(function() {
 
@@ -45,13 +46,17 @@
 
             });
 
-        var picker = new Pikaday({
-            field: document.getElementById('tgl'),
-            format: 'D MMM YYYY',
-            onSelect: function() {
-                console.log(this.getMoment().format('Do MMMM YYYY'));
-            }
-        });
+            $('#tgl').datepicker({
+              format: 'yyyy-mm-dd'
+            });
+
+            $('#tgl').on('change', function (e) {
+                // body...
+                $('#kt').val($('#tgl').val());
+            });
+
+
+
 
 	});
 

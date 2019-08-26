@@ -3,7 +3,7 @@ include_once 'header.php';
 include_once 'includes/nasabah.inc.php';
 $nas = new Nasabah($db);
 include_once 'includes/mikro.inc.php';
-$mik = new Mikro($db);
+$mik = new Pengajuan($db);
 if($_POST){ 
 	
 	include_once 'includes/alternatif.inc.php';
