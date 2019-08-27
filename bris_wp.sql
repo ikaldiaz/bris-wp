@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Aug 25, 2019 at 11:48 PM
--- Server version: 10.3.16-MariaDB
--- PHP Version: 7.3.7
+-- Host: localhost
+-- Generation Time: Aug 27, 2019 at 09:31 PM
+-- Server version: 10.1.40-MariaDB
+-- PHP Version: 7.3.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -34,6 +34,7 @@ CREATE TABLE `wp_alternatif` (
   `vektor_s` double NOT NULL,
   `vektor_v` double NOT NULL,
   `id_nasabah` int(11) NOT NULL,
+  `id_pengajuan` int(11) NOT NULL,
   `tgl` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -41,8 +42,11 @@ CREATE TABLE `wp_alternatif` (
 -- Dumping data for table `wp_alternatif`
 --
 
-INSERT INTO `wp_alternatif` (`id_alternatif`, `nama_alternatif`, `vektor_s`, `vektor_v`, `id_nasabah`, `tgl`) VALUES
-(1, 'Aaaa-1', 0, 0, 1, '2019-08-02');
+INSERT INTO `wp_alternatif` (`id_alternatif`, `nama_alternatif`, `vektor_s`, `vektor_v`, `id_nasabah`, `id_pengajuan`, `tgl`) VALUES
+(1, 'LISFANAH', 1.1224620483094, 0.10344840298471, 1, 1, '2019-08-02'),
+(2, 'Sumarmo', 3.0548702618294854, 0.28154310463122, 2, 1, '2019-08-06'),
+(3, 'hadi', 3.941593907262404, 0.3632653732344, 3, 1, '2019-08-17'),
+(4, 'Insyaf', 2.7315269159861617, 0.25174311914966, 4, 1, '2019-08-19');
 
 -- --------------------------------------------------------
 
@@ -108,7 +112,10 @@ CREATE TABLE `wp_nasabah` (
 --
 
 INSERT INTO `wp_nasabah` (`id_nasabah`, `nama`, `phone`, `alamat`) VALUES
-(1, 'LISFANAH', '085123456789', 'Wergu');
+(1, 'LISFANAH', '085123456789', 'Wergu'),
+(2, 'Sumarmo', '081111111111', 'Dawe'),
+(3, 'Hadi', '0814752221422', 'Wergu'),
+(4, 'Insyaf', '085225412753', 'Kudus');
 
 -- --------------------------------------------------------
 
@@ -132,6 +139,29 @@ INSERT INTO `wp_nilai` (`id_nilai`, `ket_nilai`, `jum_nilai`) VALUES
 (3, 'Penting', 3),
 (4, 'Cukup Penting', 4),
 (5, 'Sangat Penting', 5);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wp_pengajuan`
+--
+
+CREATE TABLE `wp_pengajuan` (
+  `id_pengajuan` int(11) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `limit_p` int(11) NOT NULL,
+  `tenor` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `wp_pengajuan`
+--
+
+INSERT INTO `wp_pengajuan` (`id_pengajuan`, `nama`, `limit_p`, `tenor`) VALUES
+(1, 'MIKRO A', 0, 0),
+(2, 'MIKRO B', 0, 0),
+(3, 'MIKRO C', 0, 0),
+(4, 'MIKRO D', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -168,6 +198,32 @@ CREATE TABLE `wp_rangking` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Dumping data for table `wp_rangking`
+--
+
+INSERT INTO `wp_rangking` (`id_alternatif`, `id_kriteria`, `nilai_rangking`, `nilai_normalisasi`) VALUES
+(1, 1, 2, 1.1224620483094),
+(1, 2, 1, 1),
+(1, 3, 1, 1),
+(1, 4, 1, 1),
+(1, 5, 1, 1),
+(2, 1, 2, 1.1224620483094),
+(2, 2, 4, 1.3607900001744),
+(2, 3, 2, 1.1665290395761),
+(2, 4, 4, 1.2599210498949),
+(2, 5, 4, 1.3607900001744),
+(3, 1, 2, 1.1224620483094),
+(3, 2, 5, 1.4299691483087),
+(3, 3, 5, 1.4299691483087),
+(3, 4, 3, 1.200936955176),
+(3, 5, 5, 1.4299691483087),
+(4, 1, 2, 1.1224620483094),
+(4, 2, 2, 1.1665290395761),
+(4, 3, 4, 1.3607900001744),
+(4, 4, 3, 1.200936955176),
+(4, 5, 3, 1.2765180070092);
+
+--
 -- Indexes for dumped tables
 --
 
@@ -202,6 +258,12 @@ ALTER TABLE `wp_nilai`
   ADD PRIMARY KEY (`id_nilai`);
 
 --
+-- Indexes for table `wp_pengajuan`
+--
+ALTER TABLE `wp_pengajuan`
+  ADD PRIMARY KEY (`id_pengajuan`);
+
+--
 -- Indexes for table `wp_pengguna`
 --
 ALTER TABLE `wp_pengguna`
@@ -222,7 +284,7 @@ ALTER TABLE `wp_rangking`
 -- AUTO_INCREMENT for table `wp_alternatif`
 --
 ALTER TABLE `wp_alternatif`
-  MODIFY `id_alternatif` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_alternatif` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `wp_kriteria`
@@ -234,13 +296,19 @@ ALTER TABLE `wp_kriteria`
 -- AUTO_INCREMENT for table `wp_nasabah`
 --
 ALTER TABLE `wp_nasabah`
-  MODIFY `id_nasabah` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_nasabah` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `wp_nilai`
 --
 ALTER TABLE `wp_nilai`
   MODIFY `id_nilai` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `wp_pengajuan`
+--
+ALTER TABLE `wp_pengajuan`
+  MODIFY `id_pengajuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `wp_pengguna`
