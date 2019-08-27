@@ -39,6 +39,15 @@ class Alternatif{
 		
 		return $stmt;
 	}
+
+	function getAll(){
+
+		$query = "SELECT * FROM ".$this->table_name." ORDER BY a.id_alternatif ASC";
+		$stmt = $this->conn->prepare( $query );
+		$stmt->execute();
+		
+		return $stmt;
+	}
 	function readAllByMonthYear($month, $year){
 
 		$query = "SELECT a.*, n.nama FROM ".$this->table_name." AS a INNER JOIN wp_nasabah AS n ON a.id_nasabah=n.id_nasabah WHERE MONTH(a.tgl) = $month AND YEAR(a.tgl) = $year  ORDER BY a.id_alternatif ASC";
@@ -79,9 +88,9 @@ class Alternatif{
 		$query = "UPDATE 
 					" . $this->table_name . " 
 				SET 
-					nama_alternatif = :kt
-					id_nasabah = :ns
-					id_pengajuan = :jpk
+					nama_alternatif = :kt,
+					id_nasabah = :ns,
+					id_pengajuan = :jpk,
 					tgl = :tgl
 				WHERE
 					id_alternatif = :id";

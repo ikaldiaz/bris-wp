@@ -2,6 +2,10 @@
 include_once 'header.php';
 include_once 'includes/alternatif.inc.php';
 $pro = new Alternatif($db);
+include_once 'includes/mikro.inc.php';
+$mik = new Pengajuan($db);
+include_once 'includes/nasabah.inc.php';
+$nas = new Nasabah($db);
 $stmt = $pro->readAll();
 $count = $pro->countAll();
 
@@ -80,12 +84,19 @@ if(isset($_POST['hapus-contengan'])){
 <?php
 $no=1;
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+    $mik->id = $row['id_pengajuan'];
+    $mik->readOne();
+    $nas->id = $row['id_nasabah'];
+
+    $nas->readOne();
+
+
 ?>
             <tr>
                 <td style="vertical-align:middle;"><input type="checkbox" value="<?php echo $row['id_alternatif'] ?>" name="checkbox[]" /></td>
                 <td style="vertical-align:middle;"><?php echo $row['nama_alternatif'] ?></td>
-                <td style="vertical-align:middle;"><?php echo $row['nama'] ?></td>
-                <td style="vertical-align:middle;"><?php echo $row['nama_pengajuan'] ?></td>
+                <td style="vertical-align:middle;"><?php echo $nas->nm ?></td>
+                <td style="vertical-align:middle;"><?php echo $mik->nm ?></td>
                 <td style="vertical-align:middle;"><?php echo $row['tgl'] ?></td>
                 <td style="vertical-align:middle;"><?php echo $row['vektor_s'] ?></td>
                 <td style="vertical-align:middle;"><?php echo $row['vektor_v'] ?></td>

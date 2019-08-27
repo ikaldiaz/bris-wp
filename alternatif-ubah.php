@@ -16,7 +16,10 @@ $nas->readOne();
 
 if($_POST){
 
-	$eks->kt = $_POST['kt'];
+	$eks->kt = $_POST['kt']; 
+	$eks->ns = $_POST['ns']; 
+	$eks->jpk = $_POST['jpk']; 
+	$eks->tgl = $_POST['tgl']; 
 	
 	if($eks->update()){
 		echo "<script>location.href='alternatif.php'</script>";
