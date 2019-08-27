@@ -23,8 +23,8 @@ $stmt5 = $pro5->readAll();
 			  </div>
 			  <div class="panel-body">
 			    <ul class="nav nav-pills nav-stacked">
-				  <li role="presentation"><a href="nilai.php">Nilai Kepentingan</a></li>
-				  <li role="presentation"><a href="kriteria.php">Kriteria</a></li>
+				  <!-- <li role="presentation"><a href="nilai.php">Nilai Kepentingan</a></li> -->
+				  <!-- <li role="presentation"><a href="kriteria.php">Kriteria</a></li> -->
 				  <li role="presentation"><a href="alternatif.php">Aplikasi Pengajuan</a></li>
 				</ul>
 			  </div>
@@ -35,7 +35,7 @@ $stmt5 = $pro5->readAll();
 			  </div>
 			  <div class="panel-body">
 			    <ul class="nav nav-pills nav-stacked">
-				  <li role="presentation"><a href="bobot.php">Bobot</a></li>
+				  <!-- <li role="presentation"><a href="bobot.php">Bobot</a></li> -->
 				  <li role="presentation"><a href="rangking.php">Rangking</a></li>
 				  <li role="presentation"><a href="laporan.php">Laporan</a></li>
 				</ul>
@@ -47,7 +47,7 @@ $stmt5 = $pro5->readAll();
 		  </div>
 		</div>
 		<div class="row">
-		  <div class="col-xs-12 col-sm-12 col-md-3">
+		  <!-- <div class="col-xs-12 col-sm-12 col-md-3">
 			<div class="panel panel-default">
 			  <div class="panel-heading">
 			    <h3 class="panel-title">Nilai Preferensi</h3>
@@ -64,7 +64,7 @@ $stmt5 = $pro5->readAll();
 				</ol>
 			  </div>
 			</div>
-		  </div>
+		  </div> -->
 		  <div class="col-xs-12 col-sm-12 col-md-3">
 			<div class="panel panel-default">
 			  <div class="panel-heading">
