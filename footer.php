@@ -13,7 +13,8 @@
     <script>
     $(document).ready(function() {
 
-    	$('#tabeldata').DataTable();
+        $('#tabeldata').DataTable();
+    	$('#tabeldatay').DataTable();
 
 
         $('#ik').on('change', function (e) {

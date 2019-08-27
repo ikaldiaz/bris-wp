@@ -3,6 +3,13 @@ include_once 'header.php';
 include_once 'includes/alternatif.inc.php';
 $pro1 = new Alternatif($db);
 $stmt1 = $pro1->readAll();
+$rank = new Alternatif($db);
+$stmtx = $rank->getAllRank();
+include_once 'includes/mikro.inc.php';
+$mik = new Pengajuan($db);
+include_once 'includes/nasabah.inc.php';
+$nas = new Nasabah($db);
+
 include_once 'includes/kriteria.inc.php';
 $pro2 = new Kriteria($db);
 $stmt2 = $pro2->readAll();
@@ -10,9 +17,16 @@ include_once 'includes/rangking.inc.php';
 $pro = new Rangking($db);
 $stmt = $pro->readKhusus();
 $count = $pro->countAll();
+
+$number = 1234.56;
+setlocale(LC_MONETARY,"de_DE");
+// setlocale (LC_MONETARY, 'INDONESIA');
+// echo money_format("The price is %i", $number);
+
+
 ?>
 	<br/>
-	<div style="display: none;">
+	<div style="display:none">
 	  <!-- Nav tabs -->
 	  <ul class="nav nav-tabs" role="tablist">
 	    <li role="presentation" class="active"><a href="#lihat" aria-controls="lihat" role="tab" data-toggle="tab">Lihat Semua Data</a></li>
@@ -23,6 +37,14 @@ $count = $pro->countAll();
 	  <!-- Tab panes -->
 	  <div class="tab-content">
 	    <div role="tabpanel" class="tab-pane active" id="lihat">
+	    	<div class="row">
+				<div class="col-md-6 text-left">
+					<h4>Hasil Ranking Aplikasi Pengajuan</h4>
+				</div>
+			</div>
+			<br/>
+
+
 	    	<br/>
 	    	<form method="post">
 			<div class="row">
@@ -166,11 +188,60 @@ $count = $pro->countAll();
 	    </div>
 	  </div>
 	
+
+
 	</div>
 
 	<div>
-		
-	</div>
+
+				<table width="100%" class="table table-striped table-bordered" id="tabeldatay">
+		        <thead>
+		            <tr>
+		                <th width="10px">Rank</th>
+		                <th>Aplikasi</th>
+		                <th>Nama Nasabah</th>
+		                <th>Jenis Pengajuan</th>
+		                <th>Tanggal Pengajuan</th>
+		            </tr>
+		        </thead>
+
+		        <tfoot>
+		            <tr>
+		                <th>Rank</th>
+		                <th>Aplikasi</th>
+		                <th>Nama Nasabah</th>
+		                <th>Jenis Pengajuan</th>
+		                <th>Tanggal Pengajuan</th>
+		            </tr>
+		        </tfoot>
+
+		        <tbody>
+		<?php
+		$no=1;
+		while ($rowx = $stmtx->fetch(PDO::FETCH_ASSOC)){
+		$mik->id = $rowx['id_pengajuan'];
+		$mik->readOne();
+		$nas->id = $rowx['id_nasabah'];
+		$nas->readOne();
+
+
+		?>
+		        <tr>
+		            <td style="vertical-align:middle;"><?php echo $no ?></td>
+		            <td style="vertical-align:middle;"><?php echo $rowx['nama_alternatif'] ?></td>
+		            <td style="vertical-align:middle;"><?php echo $nas->nm ?></td>
+		            <td style="vertical-align:middle;"><?php echo $mik->nm ?></td>
+		            <td style="vertical-align:middle;"><?php echo $rowx['tgl'] ?></td>
+		        </tr>
+		<?php
+		$no++;
+		}
+		?>
+		    	</tbody>
+			</table>
+
+			</div>
+
 
 <?php
 include_once 'footer.php';

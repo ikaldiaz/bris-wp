@@ -63,7 +63,7 @@ if(isset($_POST['hapus-contengan'])){
                 <th>Tanggal Pengajuan</th>
                 <th>Vektor S</th>
                 <th>Vektor V</th>
-                <th width="100px">Aksi</th>
+                <th width="150px">Aksi</th>
             </tr>
         </thead>
 

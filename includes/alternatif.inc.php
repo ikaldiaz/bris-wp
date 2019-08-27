@@ -42,7 +42,16 @@ class Alternatif{
 
 	function getAll(){
 
-		$query = "SELECT * FROM ".$this->table_name." ORDER BY a.id_alternatif ASC";
+		$query = "SELECT * FROM ".$this->table_name." ORDER BY id_alternatif ASC";
+		$stmt = $this->conn->prepare( $query );
+		$stmt->execute();
+		
+		return $stmt;
+	}
+
+	function getAllRank(){
+
+		$query = "SELECT * FROM ".$this->table_name." ORDER BY vektor_v DESC";
 		$stmt = $this->conn->prepare( $query );
 		$stmt->execute();
 		
