@@ -3,7 +3,9 @@ include_once 'header.php';
 include_once 'includes/alternatif.inc.php';
 $pgn1 = new Alternatif($db);
 include_once 'includes/nasabah.inc.php';
-$nas = new Nasabah($db);
+$nas = new Nasabah($db); 
+include_once 'includes/mikro.inc.php';
+$mik = new Pengajuan($db); 
 include_once 'includes/kriteria.inc.php';
 $pgn2 = new Kriteria($db);
 include_once 'includes/nilai.inc.php';
@@ -99,27 +101,44 @@ window.onload=function(){
 					    ?>
 				    <!-- <input type="text" class="form-control" id="ia" name="ia" required> -->
 				  </div>
-				  	<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#cdetail" aria-expanded="false" aria-controls="cdetail">
+
+					<!-- Button trigger modal -->
+					<button type="button" class="btn btn-primary " data-toggle="modal" data-target="#detNasabah">
 					  Detail Nasabah
 					</button>
-				  <div class="form-group collapse" id="cdetail">
-					<!-- <div class="collapse" id="cdetail"> -->
-					  <!-- <div class="well"> -->
-						<?php
-						echo "<input type='text' disabled class='form-control' value='$nas->id'>";
-						echo "<input type='text' disabled class='form-control' value='$nas->ph'>";
-						echo "<input type='text' disabled class='form-control' value='$nas->ad'>";
-						echo "<input type='text' class='form-control' name='ia' value='$pgn1->id'>";
-						// echo "<input type='text' class='form-control' id='ia' value='$pgn1->kt'>";
-					    ?>
-					  <!-- </div> -->
-					<!-- </div> -->
-				  </div>
+
+					<!-- Modal -->
+					<div class="modal fade" id="detNasabah" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					  <div class="modal-dialog">
+					    <div class="modal-content">
+					      <div class="modal-header">
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					        <h4 class="modal-title" id="myModalLabel">Detail Nasabah</h4>
+					      </div>
+					      <div class="modal-body">
+					      	<?php
+							echo "Nama <input type='text' disabled class='form-control' value='$nas->nm'>";
+							echo "Kontak <input type='text' disabled class='form-control' value='$nas->ph'>";
+							echo "Alamat <input type='text' disabled class='form-control' value='$nas->ad'>";
+							// echo "<input type='text' class='form-control' name='ia' value='$pgn1->id'>";
+							// echo "<input type='text' class='form-control' id='ia' value='$pgn1->kt'>";
+						    ?>
+
+					      </div>
+					      <div class="modal-footer">
+					        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+					      </div>
+					    </div>
+					  </div>
+					</div>
 
 				  <div class="form-group">
 				    <label for="ia">Jenis Pengajuan</label>
 				    	<?php
-						echo "<input type='text' disabled class='form-control' value='$pgn1->kt'>";
+				    	$mik->id = $pgn1->jpk;
+				    	$mik->readOne();
+						echo "<input type='text' disabled class='form-control' value='$mik->nm'>";
 						// echo "<input type='text' class='form-control' id='ia' value='$pgn1->kt'>";
 					    ?>
 				    <!-- <input type="text" class="form-control" id="ia" name="ia" required> -->

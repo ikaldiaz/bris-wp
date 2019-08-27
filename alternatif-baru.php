@@ -9,8 +9,8 @@ if($_POST){
 	include_once 'includes/alternatif.inc.php';
 	$eks = new Alternatif($db);
 
-	$eks->kt = $_POST['ns'].'-'.$_POST['jpk'].'-'.$_POST['tgl'];
-	$eks->ns = $_POST['ns'];
+	$eks->kt = $_POST['tgl'].'-'.$_POST['kt'].'-'.$_POST['jpk'].'-'.$_POST['ns'];
+	$eks->ns = $_POST['ns']; 
 	$eks->jpk = $_POST['jpk'];
 	$eks->tgl = $_POST['tgl'];
 	
@@ -75,7 +75,7 @@ window.onload=function(){
 						$stmt2 = $mik->readAll();
 						while ($row2 = $stmt2->fetch(PDO::FETCH_ASSOC)){
 							extract($row2);
-							echo "<option value='{$id_mikro}'>{$nama}</option>";
+							echo "<option value='{$id_pengajuan}'>{$nama}</option>";
 						}
 					    ?>
 				    	<!-- <option value='1'>Mikro A</option>

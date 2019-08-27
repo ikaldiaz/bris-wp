@@ -25,6 +25,11 @@
 <!-- </div> -->
 
 <script>
-	// $('#')
+	$('#nnx').on('change', function () {
+		console.log($(this).val());
+		var nilai = $(this).val();
+		$('#nn').val(nilai);
+		// body...
+	})
 
 </script>

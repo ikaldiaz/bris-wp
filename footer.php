@@ -20,6 +20,7 @@
                 // alert('woe');
 
                 // $('#oeoe').load('opo.php');
+                $('#nn').val(1);
 
                 console.log($(this).val());
 

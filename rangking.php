@@ -12,12 +12,12 @@ $stmt = $pro->readKhusus();
 $count = $pro->countAll();
 ?>
 	<br/>
-	<div>
+	<div style="display: none;">
 	  <!-- Nav tabs -->
 	  <ul class="nav nav-tabs" role="tablist">
 	    <li role="presentation" class="active"><a href="#lihat" aria-controls="lihat" role="tab" data-toggle="tab">Lihat Semua Data</a></li>
 	    <li role="presentation"><a href="#rangking" aria-controls="rangking" role="tab" data-toggle="tab">Perangkingan</a></li>
-	    <li role="presentation"><a href="rangking-baru.php" role="tab">Tambah Data</a></li>
+	    <!-- <li role="presentation"><a href="rangking-baru.php" role="tab">Tambah Data</a></li> -->
 	  </ul>
 	
 	  <!-- Tab panes -->
@@ -30,7 +30,7 @@ $count = $pro->countAll();
 					<h4>Data Rangking</h4>
 				</div>
 				<div class="col-md-6 text-right">
-		            <button type="button" onclick="location.href='rangking-baru.php'" class="btn btn-primary">Tambah Data</button>
+		            <!-- <button type="button" onclick="location.href='rangking-baru.php'" class="btn btn-primary">Tambah Data</button> -->
 		            <?php 
 		            if($count>0){
 		            ?>
@@ -47,7 +47,7 @@ $count = $pro->countAll();
 		                <th>Aplikasi Pengajuan</th>
 		                <th>Kriteria</th>
 		                <th>Nilai</th>
-		                <th width="100px">Aksi</th>
+		                <!-- <th width="100px">Aksi</th> -->
 		            </tr>
 		        </thead>
 		
@@ -56,7 +56,7 @@ $count = $pro->countAll();
 		                <th>Aplikasi Pengajuan</th>
 		                <th>Kriteria</th>
 		                <th>Nilai</th>
-		                <th>Aksi</th>
+		                <!-- <th>Aksi</th> -->
 		            </tr>
 		        </tfoot>
 		
@@ -69,10 +69,10 @@ $count = $pro->countAll();
 		                <td style="vertical-align:middle;"><?php echo $row['nama_alternatif'] ?></td>
 		                <td style="vertical-align:middle;"><?php echo $row['nama_kriteria'] ?></td>
 		                <td style="vertical-align:middle;"><?php echo $row['nilai_rangking'] ?></td>
-		                <td class="text-center" style="vertical-align:middle;">
+		                <!-- <td class="text-center" style="vertical-align:middle;">
 							<a href="rangking-ubah.php?ia=<?php echo $row['id_alternatif'] ?>&ik=<?php echo $row['id_kriteria'] ?>" class="btn btn-warning"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
 							<a href="rangking-hapus.php?ia=<?php echo $row['id_alternatif'] ?>&ik=<?php echo $row['id_kriteria'] ?>" onclick="return confirm('Yakin ingin menghapus data')" class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
-					    </td>
+					    </td> -->
 		            </tr>
 		<?php
 		}
@@ -167,6 +167,11 @@ $count = $pro->countAll();
 	  </div>
 	
 	</div>
+
+	<div>
+		
+	</div>
+
 <?php
 include_once 'footer.php';
 ?>

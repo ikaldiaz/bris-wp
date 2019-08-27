@@ -5,7 +5,7 @@ include_once 'header.php';
 if($_POST){
 	
 	include_once 'includes/nasabah.inc.php';
-	$eks = new Kriteria($db);
+	$eks = new Nasabah($db);
 
 	$eks->nm = $_POST['nm'];
 	$eks->ph = $_POST['ph'];
