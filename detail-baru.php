@@ -103,9 +103,11 @@ window.onload=function(){
 				  </div>
 
 					<!-- Button trigger modal -->
+				  <div class="form-group">
 					<button type="button" class="btn btn-primary " data-toggle="modal" data-target="#detNasabah">
 					  Detail Nasabah
 					</button>
+				  </div>
 
 					<!-- Modal -->
 					<div class="modal fade" id="detNasabah" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -179,8 +181,9 @@ window.onload=function(){
 
 
 				  -->
-				  
+				  <div class="form-group">
 				  <input type="text" class="form-control" id="nn" name="nn" placeholder="nilai" /> 
+				  </div>
 
 				  <button type="submit" class="btn btn-primary">Simpan</button>
 				</form>

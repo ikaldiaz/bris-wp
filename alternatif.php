@@ -61,8 +61,8 @@ if(isset($_POST['hapus-contengan'])){
                 <th>Nama Nasabah</th>
                 <th>Jenis Pengajuan</th>
                 <th>Tanggal Pengajuan</th>
-                <th>Vektor S</th>
-                <th>Vektor V</th>
+                <!-- <th>Vektor S</th> -->
+                <!-- <th>Vektor V</th> -->
                 <th width="150px">Aksi</th>
             </tr>
         </thead>
@@ -74,8 +74,8 @@ if(isset($_POST['hapus-contengan'])){
                 <th>Nama Nasabah</th>
                 <th>Jenis Pengajuan</th>
                 <th>Tanggal Pengajuan</th>
-                <th>Vektor S</th>
-                <th>Vektor V</th>
+                <!-- <th>Vektor S</th> -->
+                <!-- <th>Vektor V</th> -->
                 <th>Aksi</th>
             </tr>
         </tfoot>
@@ -98,8 +98,8 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
                 <td style="vertical-align:middle;"><?php echo $nas->nm ?></td>
                 <td style="vertical-align:middle;"><?php echo $mik->nm ?></td>
                 <td style="vertical-align:middle;"><?php echo $row['tgl'] ?></td>
-                <td style="vertical-align:middle;"><?php echo $row['vektor_s'] ?></td>
-                <td style="vertical-align:middle;"><?php echo $row['vektor_v'] ?></td>
+                <!-- <td style="vertical-align:middle;"><?php echo $row['vektor_s'] ?></td> -->
+                <!-- <td style="vertical-align:middle;"><?php echo $row['vektor_v'] ?></td> -->
                 <td class="text-center" style="vertical-align:middle;">
 					<a href="alternatif-ubah.php?id_a=<?php echo $row['id_alternatif'] ?>" class="btn btn-warning"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
                     <a href="detail-baru.php?id_a=<?php echo $row['id_alternatif'] ?>" class="btn btn-info"><span class="glyphicon glyphicon-book" aria-hidden="true"></span></a>

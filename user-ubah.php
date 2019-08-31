@@ -55,7 +55,7 @@ window.onload=function(){
                   </div>
                   <div class="form-group">
                     <label for="pw">Password</label>
-                    <input type="text" class="form-control" id="pw" name="pw" value="<?php echo $eks->pw; ?>">
+                    <input type="password" class="form-control" id="pw" name="pw" value="<?php echo $eks->pw; ?>">
                   </div>
                   <button type="submit" class="btn btn-primary">Ubah</button>
                 </form>

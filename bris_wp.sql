@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 27, 2019 at 09:31 PM
+-- Generation Time: Aug 31, 2019 at 06:38 PM
 -- Server version: 10.1.40-MariaDB
 -- PHP Version: 7.3.5
 
@@ -181,8 +181,8 @@ CREATE TABLE `wp_pengguna` (
 --
 
 INSERT INTO `wp_pengguna` (`id_pengguna`, `nama_lengkap`, `username`, `password`) VALUES
-(1, 'Ii Safitri', 'admin', '21232f297a57a5a743894a0e4a801fc3'),
-(2, 'Code Berkas', 'user', 'ee11cbb19052e40b07aac0ca060c23ee');
+(1, 'Ii Safitri', 'unithead', 'c4e875cbdb3ef07a534aeeea4ac618f5'),
+(2, 'Account Officer', 'ao', 'adac5e63f80f8629e9573527b25891d3');
 
 -- --------------------------------------------------------
 
@@ -308,7 +308,7 @@ ALTER TABLE `wp_nilai`
 -- AUTO_INCREMENT for table `wp_pengajuan`
 --
 ALTER TABLE `wp_pengajuan`
-  MODIFY `id_pengajuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_pengajuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `wp_pengguna`
