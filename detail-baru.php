@@ -128,7 +128,7 @@ window.onload=function(){
 
 					      </div>
 					      <div class="modal-footer">
-					        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					        <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
 					        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
 					      </div>
 					    </div>
@@ -150,7 +150,6 @@ window.onload=function(){
 				    <label for="ik">Kriteria Penilaian</label>
 				    <select class="form-control" id="ik" name="ik">
 						<option value='xxx'>Pilih Kriteria Penilaian</option>
-
 				    	<?php 
 						$stmt2 = $pgn2->readAll();
 						while ($row2 = $stmt2->fetch(PDO::FETCH_ASSOC)){
@@ -161,12 +160,10 @@ window.onload=function(){
 				    </select>
 				  </div>
 
-				  <div class="form-group" id="oeoe">
+				  <div id="oeoe">
 				  	
 				  </div>
-
 				  <!-- 
-
 				  <div class="form-group">
 				    <label for="nn">Kriteria Penilaian </label>
 				    <input type='hidden' class='form-control' id='ik' name='ik' value='33'>
@@ -178,8 +175,6 @@ window.onload=function(){
 				    	<option value="5">Tanah + Bangunan</option>
 				    </select>
 				  </div>
-
-
 				  -->
 				  <div class="form-group">
 				  <input type="text" class="form-control" id="nn" name="nn" placeholder="nilai" /> 
@@ -187,11 +182,72 @@ window.onload=function(){
 
 				  <button type="submit" class="btn btn-primary">Simpan</button>
 				</form>
+				<br>
+
+				  <div class="row">
+					 <ul class="nav nav-tabs" role="tablist">
+					 	<li role="presentation" class="active">
+					 		<a href="#c1" aria-controls="c1" role="tab" data-toggle="tab">Agunan</a>
+					 	</li>
+					 	<li role="presentation">
+					 		<a href="#c3" aria-controls="c3" role="tab" data-toggle="tab">Pendapatan</a>
+					 	</li>
+					 	<li role="presentation">
+					 		<a href="#c4" aria-controls="c4" role="tab" data-toggle="tab">Kondisi</a>
+					 	</li>
+					 	<li role="presentation">
+					 		<a href="#c5" aria-controls="c5" role="tab" data-toggle="tab">Karakter</a>
+					 	</li>
+					 </ul>
+
+					 <div class="tab-content">
+					 	<div role="tabpanel" class="tab-pane active" id="c1">
+					 		<div class="row">
+								<div class="col-md-12 text-left">
+									<h4>Agunan</h4>
+								</div>
+							</div>
+							<br/>
+
+					 	</div>
+					 	<div role="tabpanel" class="tab-pane" id="c3">
+					 		<div class="row">
+								<div class="col-md-12 text-left">
+									<h4>Pendapatan</h4>
+								</div>
+							</div>
+							<br/>
+
+							<div>
+								
+							</div>
+
+					 	</div>
+					 	<div role="tabpanel" class="tab-pane" id="c4">
+					 		<div class="row">
+								<div class="col-md-12 text-left">
+									<h4>Kondisi</h4>
+								</div>
+							</div>
+							<br/>
+
+					 	</div>
+					 	<div role="tabpanel" class="tab-pane" id="c5">
+					 		<div class="row">
+								<div class="col-md-12 text-left">
+									<h4>Karakter</h4>
+								</div>
+							</div>
+							<br/>
+
+					 	</div>
+					 </div>	
+				  </div>
 			  
 		  </div></div></div>
 		  <div class="col-xs-12 col-sm-12 col-md-2">
 		  </div>
 		</div>
-		<?php
+<?php
 include_once 'footer.php';
 ?>

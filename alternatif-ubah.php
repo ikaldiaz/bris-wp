@@ -1,26 +1,21 @@
 <?php
 include_once 'header.php';
 $id = isset($_GET['id_a']) ? $_GET['id_a'] : die('ERROR: missing ID Aplikasi Pengajuan.');
-
 include_once 'includes/nasabah.inc.php';
 $nas = new Nasabah($db);
+include_once 'includes/mikro.inc.php';
+$mik = new Pengajuan($db);
 include_once 'includes/alternatif.inc.php';
 $eks = new Alternatif($db);
-
 $eks->id = $id;
-
 $eks->readOne();
-$nas->id = $eks->ns;
-
+$nas->id = $eks->ns; 
 $nas->readOne();
-
 if($_POST){
-
-	$eks->kt = $_POST['kt']; 
-	$eks->ns = $_POST['ns']; 
-	$eks->jpk = $_POST['jpk']; 
-	$eks->tgl = $_POST['tgl']; 
-	
+	$eks->kt = $_POST['kt'];
+	$eks->ns = $_POST['ns'];
+	$eks->jpk = $_POST['jpk'];
+	$eks->tgl = $_POST['tgl'];
 	if($eks->update()){
 		echo "<script>location.href='alternatif.php'</script>";
 	} else{
@@ -72,10 +67,22 @@ window.onload=function(){
 				  <div class="form-group">
 				    <label for="jpk">Jenis Pengajuan Kredit</label>
 				    <select class="form-control" id="jpk" name="jpk">
-				    	<option value='1' >Mikro A</option>
-				    	<option value='2' >Mikro B</option>
-				    	<option value='3' >Mikro C</option>
-				    	<option value='4' >Mikro D</option>
+				    	<?php
+				    	$mik->id = $eks->jpk;
+				    	$mik->readOne();
+						echo "<option value='{$mik->id}'>{$mik->nm}</option>";
+
+
+						$stmt2 = $mik->readAll();
+						while ($row2 = $stmt2->fetch(PDO::FETCH_ASSOC)){
+							extract($row2);
+							echo "<option value='{$id_pengajuan}'>{$nama}</option>";
+						}
+					    ?>
+				    	<!-- <option value='1'>Mikro A</option>
+				    	<option value='2'>Mikro B</option>
+				    	<option value='3'>Mikro C</option>
+				    	<option value='4'>Mikro D</option> -->
 				    </select>
 				  </div>
 				  <div class="form-group">

@@ -23,7 +23,7 @@
                 // $('#oeoe').load('opo.php');
                 $('#nn').val(1);
 
-                console.log($(this).val());
+                // console.log($(this).val());
 
                 var cr = $(this).val();
 

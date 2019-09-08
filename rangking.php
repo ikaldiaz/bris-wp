@@ -25,6 +25,11 @@ setlocale(LC_MONETARY,"de_DE");
 
 
 ?>
+	<div class="row">
+		<div class="col-md-6 text-left">
+			<h4>Hasil Perangkingan</h4>
+		</div>
+	</div>
 	<br/>
 	<div style="display:none">
 	  <!-- Nav tabs -->
@@ -202,6 +207,7 @@ setlocale(LC_MONETARY,"de_DE");
 		                <th>Nama Nasabah</th>
 		                <th>Jenis Pengajuan</th>
 		                <th>Tanggal Pengajuan</th>
+		                <th>Nilai Akhir</th>
 		            </tr>
 		        </thead>
 
@@ -212,6 +218,7 @@ setlocale(LC_MONETARY,"de_DE");
 		                <th>Nama Nasabah</th>
 		                <th>Jenis Pengajuan</th>
 		                <th>Tanggal Pengajuan</th>
+		                <th>Nilai Akhir</th>
 		            </tr>
 		        </tfoot>
 
@@ -223,8 +230,6 @@ setlocale(LC_MONETARY,"de_DE");
 		$mik->readOne();
 		$nas->id = $rowx['id_nasabah'];
 		$nas->readOne();
-
-
 		?>
 		        <tr>
 		            <td style="vertical-align:middle;"><?php echo $no ?></td>
@@ -232,6 +237,7 @@ setlocale(LC_MONETARY,"de_DE");
 		            <td style="vertical-align:middle;"><?php echo $nas->nm ?></td>
 		            <td style="vertical-align:middle;"><?php echo $mik->nm ?></td>
 		            <td style="vertical-align:middle;"><?php echo $rowx['tgl'] ?></td>
+		            <td style="vertical-align:middle;"><?php echo $rowx['vektor_v'] ?></td>
 		        </tr>
 		<?php
 		$no++;
