@@ -5,7 +5,7 @@
 
  ?>
 
-<!-- <div class="form-group"> -->
+<div class="form-group">
     <label for="nnx">Karakter (C5)</label>
     <select class="form-control" id="nnx" name="nnx">
     	<?php
@@ -22,7 +22,7 @@
 	    <option value="4">Baik</option>
 	    <option value="5">Sangat baik</option>
     </select>
-<!-- </div> -->
+</div>
 
 <script>
 	$('#nnx').on('change', function () {

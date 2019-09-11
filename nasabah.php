@@ -82,6 +82,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
                 <td style="vertical-align:middle;"><?php echo $row['alamat'] ?></td>
                 <td style="text-align:center;vertical-align:middle;">
 					<a href="nasabah-ubah.php?id=<?php echo $row['id_nasabah'] ?>" class="btn btn-warning"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                    <a href="nasabah-detail.php?id=<?php echo $row['id_nasabah'] ?>" class="btn btn-warning"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
 					<a href="nasabah-hapus.php?id=<?php echo $row['id_nasabah'] ?>" onclick="return confirm('Yakin ingin menghapus data')" class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
 			    </td>
             </tr>

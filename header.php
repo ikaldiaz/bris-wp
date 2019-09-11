@@ -43,7 +43,9 @@ $db = $config->getConnection();
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		  </button>
-		  <a class="navbar-brand" href="index.php">WP</a>
+		  <a class="navbar-brand" href="index.php">SPK Pemberian Fasilitas Pembiayaan</a>
+		  <br>
+		  <p>SPK Pemberian Fasilitas Pembiayaan</p>
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->

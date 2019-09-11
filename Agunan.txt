@@ -1,0 +1,35 @@
+Agunan
+
+Tanah
+no dokumen
+nama pemilik
+tanggal penerbitan 
+Luas tanah
+harga per m2
+marketable (dapat dijual)
+nilai agunan
+
+
+Kios
+no dokumen
+nama pemilik
+tanggal penerbitan
+marketable 
+nilai agunan
+
+
+kendaraan
+no dokumen
+nama pemilik
+tanggal peneerbitan
+marketable
+nilai agunan
+
+
+
+
+
+
+
+
+
